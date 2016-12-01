@@ -49,8 +49,12 @@ This file contains a number of front-end interview questions that can be used wh
 #### HTML Questions:
 
 * What does a `doctype` do?
+  * Answer: tells the browser what kind of document to expect. no doctype makes browsers run in quirks mode
+  * Link: http://stackoverflow.com/questions/414891/what-is-doctype?noredirect=1&lq=1
 * What's the difference between full standards mode, almost standards mode and quirks mode?
 * What's the difference between HTML and XHTML?
+  * Answer: XHTML is almost identical to HTML but stricter. Requires markup to be 'well-formed' E.g. properly nested elements and doctype is necessary. 
+  * Link: http://www.w3schools.com/html/html_xhtml.asp
 * Are there any problems with serving pages as `application/xhtml+xml`?
 * How do you serve a page with content in multiple languages?
 * What kind of things must you be wary of when design or developing for multilingual sites?
@@ -112,12 +116,20 @@ This file contains a number of front-end interview questions that can be used wh
   * Answer: http://lucybain.com/blog/2014/null-undefined-undeclared/
 * What is a closure, and how/why would you use one?
 * What's a typical use case for anonymous functions?
+  * Answer: http://lucybain.com/blog/2014/js-anonymous-referenced-declared-functions/
 * How do you organize your code? (module pattern, classical inheritance?)
 * What's the difference between host objects and native objects?
 * Difference between: `function Person(){}`, `var person = Person()`, and `var person = new Person()`?
 * What's the difference between `.call` and `.apply`?
 * Explain `Function.prototype.bind`.
 * When would you use `document.write()`?
+  * Never
+  * Alternatives: 
+    *.innerHTML - This is a wonderful alternative, but this attribute has to be attached to the element where you want to put the text.
+Example: document.getElementById('output1').innerHTML = 'Some text!';
+    * .createTextNode() - is the alternative recommended by the W3C.
+    Example: var para = document.createElement('p');
+    para.appendChild(document.createTextNode('Hello, '));
 * What's the difference between feature detection, feature inference, and using the UA string?
 * Explain Ajax in as much detail as possible.
 * What are the advantages and disadvantages of using Ajax?
@@ -130,6 +142,7 @@ This file contains a number of front-end interview questions that can be used wh
 * Why is extending built-in JavaScript objects not a good idea?
 * Difference between document load event and document DOMContentLoaded event?
 * What is the difference between `==` and `===`?
+  * Answer: Abstract equality will attempt to resolve the data types via type coercion before making a comparison. Strict equality will return false if the types are different
 * Explain the same-origin policy with regards to JavaScript.
 * Make this work:
 ```javascript
