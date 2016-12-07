@@ -107,29 +107,33 @@ This file contains a number of front-end interview questions that can be used wh
 * Explain event delegation
   * Answer: Event delegation refers to the process of using event propagation (bubbling) to handle events at a higher level in the DOM than the element on which the event originated. It allows us to attach a single event listener for elements that exist now or in the future.
 * Explain how `this` works in JavaScript
+  * Answer: 'this' refers to the context of the currently executing method. i.e. the object the currently executing method is a part of. Usually just the object to the left of the dot in a method invocation. Also the first argument when you use call, apply, or bind. 
 * Explain how prototypal inheritance works
+  * Answer: When every instance of a class has an internal prototype pointer to the prototype of the class. Different ways to create the class:
+    * Prototypal - create an object using Object.create and passing in the class's prototype object
+    * Pseudoclassical - just use 'this'. Creating an instance using 'new' will basically assign the prototype pointer of 'this' to its class's prototype object.
 * What do you think of AMD vs CommonJS?
+  * Modularity is great. AMD is commonly used in the front end (e.g. RequireJS) because its async and CommonJS on the backend (Node). ES6 export/import is becoming the new standard - compact like CommonJS and async like AMD. 
 * Explain why the following doesn't work as an IIFE: `function foo(){ }();`.
   * What needs to be changed to properly make it an IIFE?
+  * Answer: You can't immediately invoke a declaration. Wrap it in () to indicate to the parser that it's an expression. 
 * What's the difference between a variable that is: `null`, `undefined` or undeclared?
   * How would you go about checking for any of these states?
   * Answer: http://lucybain.com/blog/2014/null-undefined-undeclared/
 * What is a closure, and how/why would you use one?
+  * When a function object has access to the execution context of the outer function it was created in, even after the outer function has returned. Commonly used to create private variables. 
 * What's a typical use case for anonymous functions?
   * Answer: http://lucybain.com/blog/2014/js-anonymous-referenced-declared-functions/
 * How do you organize your code? (module pattern, classical inheritance?)
+  * Answer: Prototypal inheritance. React - modular patterns using ES6
 * What's the difference between host objects and native objects?
+  * Answer: host objects are inherent to the environment (e.g. 'window') whereas native objects are inherent to the language 
 * Difference between: `function Person(){}`, `var person = Person()`, and `var person = new Person()`?
 * What's the difference between `.call` and `.apply`?
 * Explain `Function.prototype.bind`.
 * When would you use `document.write()`?
-  * Never
-  * Alternatives: 
-    *.innerHTML - This is a wonderful alternative, but this attribute has to be attached to the element where you want to put the text.
-Example: document.getElementById('output1').innerHTML = 'Some text!';
-    * .createTextNode() - is the alternative recommended by the W3C.
-    Example: var para = document.createElement('p');
-    para.appendChild(document.createTextNode('Hello, '));
+  * Answer: Never - if it runs after the doc has loaded it'll overwrite everything
+  * Alternatives - innerhtml()
 * What's the difference between feature detection, feature inference, and using the UA string?
 * Explain Ajax in as much detail as possible.
 * What are the advantages and disadvantages of using Ajax?
