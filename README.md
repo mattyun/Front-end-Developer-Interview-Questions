@@ -34,9 +34,21 @@ This file contains a number of front-end interview questions that can be used wh
 * If you have 5 different stylesheets, how would you best integrate them into the site?
 * Can you describe the difference between progressive enhancement and graceful degradation?
 * How would you optimize a website's assets/resources?
+  * Answer:
+    * Merge multiple JS files and CSS files
+    * Minify files
+    * Off-load assets using a CDN (content delivery network) to deliver static files from closer servers
+    * Optimize images
+    * Use sprites
+    
 * How many resources will a browser download from a given domain at a time?
   * What are the exceptions?
 * Name 3 ways to decrease page load (perceived or actual load time).
+  * Answer:
+    * Everything in optimze website's assets answer
+    * Minimize HTTP requests - cache and combine files
+    * Compress files using Gzip
+    * Perceived - 
 * If you jumped on a project and they used tabs and you used spaces, what would you do?
 * Describe how you would create a simple slideshow page.
 * If you could master one technology this year, what would it be?
@@ -61,7 +73,11 @@ This file contains a number of front-end interview questions that can be used wh
 * What are `data-` attributes good for?
 * Consider HTML5 as an open web platform. What are the building blocks of HTML5?
 * Describe the difference between a `cookie`, `sessionStorage` and `localStorage`.
+  * cookies are a text file
+  * cookies  have smaller size limit
+  * cookies are sent to server on each request and can't typically be accessed by JS. => Cookies for things server needs and local storage for things client needs
 * Describe the difference between `<script>`, `<script async>` and `<script defer>`.
+  * Answer: http://www.growingwiththeweb.com/2014/02/async-vs-defer-attributes.html
 * Why is it generally a good idea to position CSS `<link>`s between `<head></head>` and JS `<script>`s just before `</body>`? Do you know any exceptions?
 * What is progressive rendering?
 * Have you used different HTML templating languages before?
@@ -73,6 +89,7 @@ This file contains a number of front-end interview questions that can be used wh
 * Describe Floats and how they work.
 * Describe z-index and how stacking context is formed.
 * Describe BFC(Block Formatting Context) and how it works.
+  * Answer: https://www.sitepoint.com/understanding-block-formatting-contexts-in-css/
 * What are the various clearing techniques and which is appropriate for what context?
 * Explain CSS sprites, and how you would implement them on a page or site.
 * What are your favourite image replacement techniques and which do you use when?
