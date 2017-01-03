@@ -136,7 +136,8 @@ This file contains a number of front-end interview questions that can be used wh
   * Answer: You can't immediately invoke a declaration. Wrap it in () to indicate to the parser that it's an expression. 
 * What's the difference between a variable that is: `null`, `undefined` or undeclared?
   * How would you go about checking for any of these states?
-  * Answer: http://lucybain.com/blog/2014/null-undefined-undeclared/
+  * Answer: null is a value you assign to a variable to represent 'no value', undefined is the type of a variable that has been declared but not yet defined, and undeclared variables have not been declared. typeof null is 'object' and typeof undefined is 'undefined' 
+  * http://lucybain.com/blog/2014/null-undefined-undeclared/
 * What is a closure, and how/why would you use one?
   * When a function object has access to the execution context of the outer function it was created in, even after the outer function has returned. Commonly used to create private variables. 
 * What's a typical use case for anonymous functions?
@@ -152,7 +153,9 @@ This file contains a number of front-end interview questions that can be used wh
   * Answer: Never - if it runs after the doc has loaded it'll overwrite everything
   * Alternatives - innerhtml()
 * What's the difference between feature detection, feature inference, and using the UA string?
+  * http://lucybain.com/blog/2014/feature-detection-vs-inference/
 * Explain Ajax in as much detail as possible.
+  * http://wandrr.io/JS-Interview-Question-Explain-AJAX-in-as-much-detail-as-possible
 * What are the advantages and disadvantages of using Ajax?
 * Explain how JSONP works (and how it's not really Ajax).
 * Have you ever used JavaScript templating?
