@@ -120,24 +120,11 @@ This file contains a number of front-end interview questions that can be used wh
 * Is there any reason you'd want to use `translate()` instead of *absolute positioning*, or vice-versa? And why?
 
 #### JS Questions:
-
-* Explain event delegation
-  * Answer: Event delegation refers to the process of using event propagation (bubbling) to handle events at a higher level in the DOM than the element on which the event originated. It allows us to attach a single event listener for elements that exist now or in the future.
-* Explain how `this` works in JavaScript
-  * Answer: 'this' refers to the context of the currently executing method. i.e. the object the currently executing method is a part of. Usually just the object to the left of the dot in a method invocation. Also the first argument when you use call, apply, or bind. 
+Review:
 * Explain how prototypal inheritance works
   * Answer: When every instance of a class has an internal prototype pointer to the prototype of the class. Different ways to create the class:
     * Prototypal - create an object using Object.create and passing in the class's prototype object
     * Pseudoclassical - just use 'this'. Creating an instance using 'new' will basically assign the prototype pointer of 'this' to its class's prototype object.
-* What do you think of AMD vs CommonJS?
-  * Modularity is great. AMD is commonly used in the front end (e.g. RequireJS) because its async and CommonJS on the backend (Node). ES6 export/import is becoming the new standard - compact like CommonJS and async like AMD. 
-* Explain why the following doesn't work as an IIFE: `function foo(){ }();`.
-  * What needs to be changed to properly make it an IIFE?
-  * Answer: You can't immediately invoke a declaration. Wrap it in () to indicate to the parser that it's an expression. 
-* What's the difference between a variable that is: `null`, `undefined` or undeclared?
-  * How would you go about checking for any of these states?
-  * Answer: null is a value you assign to a variable to represent 'no value', undefined is the type of a variable that has been declared but not yet defined, and undeclared variables have not been declared. typeof null is 'object' and typeof undefined is 'undefined' 
-  * http://lucybain.com/blog/2014/null-undefined-undeclared/
 * What is a closure, and how/why would you use one?
   * When a function object has access to the execution context of the outer function it was created in, even after the outer function has returned. Commonly used to create private variables. 
 * What's a typical use case for anonymous functions?
@@ -147,8 +134,6 @@ This file contains a number of front-end interview questions that can be used wh
 * What's the difference between host objects and native objects?
   * Answer: host objects are inherent to the environment (e.g. 'window') whereas native objects are inherent to the language 
 * Difference between: `function Person(){}`, `var person = Person()`, and `var person = new Person()`?
-* What's the difference between `.call` and `.apply`?
-* Explain `Function.prototype.bind`.
 * When would you use `document.write()`?
   * Answer: Never - if it runs after the doc has loaded it'll overwrite everything
   * Alternatives - innerhtml()
@@ -160,10 +145,7 @@ This file contains a number of front-end interview questions that can be used wh
 * Explain how JSONP works (and how it's not really Ajax).
 * Have you ever used JavaScript templating?
   * If so, what libraries have you used?
-* Explain "hoisting".
-* Describe event bubbling.
 * What's the difference between an "attribute" and a "property"?
-* Why is extending built-in JavaScript objects not a good idea?
 * Difference between document load event and document DOMContentLoaded event?
 * What is the difference between `==` and `===`?
   * Answer: Abstract equality will attempt to resolve the data types via type coercion before making a comparison. Strict equality will return false if the types are different
@@ -172,16 +154,10 @@ This file contains a number of front-end interview questions that can be used wh
 ```javascript
 duplicate([1,2,3,4,5]); // [1,2,3,4,5,1,2,3,4,5]
 ```
-* Why is it called a Ternary expression, what does the word "Ternary" indicate?
-* What is `"use strict";`? what are the advantages and disadvantages to using it?
-* Create a for loop that iterates up to `100` while outputting **"fizz"** at multiples of `3`, **"buzz"** at multiples of `5` and **"fizzbuzz"** at multiples of `3` and `5`
-* Why is it, in general, a good idea to leave the global scope of a website as-is and never touch it?
 * Why would you use something like the `load` event? Does this event have disadvantages? Do you know any alternatives, and why would you use those?
 * Explain what a single page app is and how to make one SEO-friendly.
 * What is the extent of your experience with Promises and/or their polyfills?
 * What are the pros and cons of using Promises instead of callbacks?
-* What are some of the advantages/disadvantages of writing JavaScript code in a language that compiles to JavaScript?
-* What tools and techniques do you use debugging JavaScript code?
 * What language constructions do you use for iterating over object properties and array items?
 * Explain the difference between mutable and immutable objects.
   * What is an example of an immutable object in JavaScript?
@@ -191,6 +167,33 @@ duplicate([1,2,3,4,5]); // [1,2,3,4,5,1,2,3,4,5]
 * What is event loop?
   * What is the difference between call stack and task queue?
 * Explain the differences on the usage of `foo` between `function foo() {}` and `var foo = function() {}`
+* What tools and techniques do you use debugging JavaScript code?
+
+
+* Explain event delegation
+  * Answer: Event delegation refers to the process of using event propagation (bubbling) to handle events at a higher level in the DOM than the element on which the event originated. It allows us to attach a single event listener for elements that exist now or in the future.
+* Explain how `this` works in JavaScript
+  * Answer: 'this' refers to the context of the currently executing method. i.e. the object the currently executing method is a part of. Can be bound implicitly, explicitly,to new instance, or to window. Implicit -  Usually just the object to the left of the dot in a method invocation. Explicit - the first argument when you use call, apply, or bind. 'new' - bound to new instance. Window - if method invoked in global context (unless 'strict' mode)      
+* What do you think of AMD vs CommonJS?
+  * Modularity is great. AMD is commonly used in the front end (e.g. RequireJS) because its async and CommonJS on the backend (Node). ES6 export/import is becoming the new standard - compact like CommonJS and async like AMD. 
+* Explain why the following doesn't work as an IIFE: `function foo(){ }();`.
+  * What needs to be changed to properly make it an IIFE?
+  * Answer: You can't immediately invoke a declaration. Wrap it in () to indicate to the parser that it's an expression. 
+* What's the difference between a variable that is: `null`, `undefined` or undeclared?
+  * How would you go about checking for any of these states?
+  * Answer: null is a value you assign to a variable to represent 'no value', undefined is the type of a variable that has been declared but not yet defined, and undeclared variables have not been declared. typeof null is 'object' and typeof undefined is 'undefined' 
+  * http://lucybain.com/blog/2014/null-undefined-undeclared/
+* What's the difference between `.call` and `.apply`?
+* Explain `Function.prototype.bind`.
+* Explain "hoisting".
+* Describe event bubbling.
+* Why is extending built-in JavaScript objects not a good idea?
+* Why is it called a Ternary expression, what does the word "Ternary" indicate?
+* What is `"use strict";`? what are the advantages and disadvantages to using it?
+* Create a for loop that iterates up to `100` while outputting **"fizz"** at multiples of `3`, **"buzz"** at multiples of `5` and **"fizzbuzz"** at multiples of `3` and `5`
+* Why is it, in general, a good idea to leave the global scope of a website as-is and never touch it?
+* What are some of the advantages/disadvantages of writing JavaScript code in a language that compiles to JavaScript?
+
 
 #### Testing Questions:
 
