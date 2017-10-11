@@ -146,6 +146,8 @@ Review:
 * Have you ever used JavaScript templating?
   * If so, what libraries have you used?
 * What's the difference between an "attribute" and a "property"?
+  * Answer: attributes are defined in the HTML itself, while properties exist on the DOM node object which is generated after the HTML is parsed
+  * reference: https://stackoverflow.com/questions/6003819/properties-and-attributes-in-html
 * Difference between document load event and document DOMContentLoaded event?
 * What is the difference between `==` and `===`?
   * Answer: Abstract equality will attempt to resolve the data types via type coercion before making a comparison. Strict equality will return false if the types are different
