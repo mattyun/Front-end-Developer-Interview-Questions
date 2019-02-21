@@ -214,6 +214,7 @@ duplicate([1,2,3,4,5]); // [1,2,3,4,5,1,2,3,4,5]
 
 * Traditionally, why has it been better to serve site assets from multiple domains?
 * Do your best to describe the process from the time you type in a website's URL to it finishing loading on your screen.
+  *https://www.quora.com/What-happens-when-you-click-on-a-link-from-a-technical-perspective
 * What are the differences between Long-Polling, Websockets and Server-Sent Events?
 * Explain the following request and response headers:
   * Diff. between Expires, Date, Age and If-Modified-...
